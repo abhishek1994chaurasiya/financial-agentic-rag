@@ -1,0 +1,263 @@
+{
+  "input_file": "results/baseline_dev_200.jsonl",
+  "total_evaluated": 199,
+  "correct_count": 93,
+  "failed_count": 106,
+  "execution_accuracy_pct": 46.73,
+  "avg_latency_correct_sec": 16.18,
+  "avg_latency_failed_sec": 18.796,
+  "failure_taxonomy": {
+    "Parse / Output Truncation Error": {
+      "count": 52,
+      "pct_of_failures": 49.06,
+      "pct_of_total": 26.13
+    },
+    "Single-Step Lookup / Hallucination Error": {
+      "count": 27,
+      "pct_of_failures": 25.47,
+      "pct_of_total": 13.57
+    },
+    "Multi-Step Arithmetic / Reasoning Error": {
+      "count": 17,
+      "pct_of_failures": 16.04,
+      "pct_of_total": 8.54
+    },
+    "Unit / Magnitude Scaling Error": {
+      "count": 5,
+      "pct_of_failures": 4.72,
+      "pct_of_total": 2.51
+    },
+    "Sign Inversion Error": {
+      "count": 5,
+      "pct_of_failures": 4.72,
+      "pct_of_total": 2.51
+    }
+  },
+  "sample_failures": [
+    {
+      "doc_id": "v_2008_page_17_pdf_1",
+      "failure_category": "Single-Step Lookup / Hallucination Error",
+      "question": "what is the average payment volume per transaction for american express?",
+      "gold_program": "divide(637, const_5)",
+      "gold_answer": 127.4,
+      "predicted_answer": 1.0,
+      "latency_sec": 4.794
+    },
+    {
+      "doc_id": "etr_2011_page_341_pdf_3",
+      "failure_category": "Single-Step Lookup / Hallucination Error",
+      "question": "in 2010 what was the net change in net revenue in millions",
+      "gold_program": "add(18.9, 0.3)",
+      "gold_answer": 19.2,
+      "predicted_answer": 555.6,
+      "latency_sec": 3.47
+    },
+    {
+      "doc_id": "jpm_2008_page_85_pdf_3",
+      "failure_category": "Unit / Magnitude Scaling Error",
+      "question": "what was jpmorgan chase & co's common equity tier 1 ( cet1 ) ratio in 2008?",
+      "gold_program": "divide(136104, 1244659)",
+      "gold_answer": 0.10935,
+      "predicted_answer": 1.09,
+      "latency_sec": 7.159
+    },
+    {
+      "doc_id": "cme_2017_page_97_pdf_5",
+      "failure_category": "Sign Inversion Error",
+      "question": "what was the increase in class a common stock issued and outstanding between years , in thousands?",
+      "gold_program": "subtract(339235, 338240)",
+      "gold_answer": 995.0,
+      "predicted_answer": -1000.0,
+      "latency_sec": 6.453
+    },
+    {
+      "doc_id": "pnc_2013_page_62_pdf_2",
+      "failure_category": "Single-Step Lookup / Hallucination Error",
+      "question": "in millions what was total residential mortgages balance for 2013 and 2012?",
+      "gold_program": "add(1356, 2220)",
+      "gold_answer": 3576.0,
+      "predicted_answer": 2220.0,
+      "latency_sec": 7.416
+    },
+    {
+      "doc_id": "lmt_2013_page_74_pdf_4",
+      "failure_category": "Sign Inversion Error",
+      "question": "what was the change in the weighted average common shares outstanding for diluted computations from 2012 to 2013 , in millions?",
+      "gold_program": "subtract(326.5, 328.4)",
+      "gold_answer": -1.9,
+      "predicted_answer": 1.9,
+      "latency_sec": 5.68
+    },
+    {
+      "doc_id": "stt_2011_page_83_pdf_1",
+      "failure_category": "Parse / Output Truncation Error",
+      "question": "in 2011 what was the amount of tax related to the unrealized losses reclassifications totaled $ 303 million , or $ 189 million after-tax,",
+      "gold_program": "subtract(303, 189)",
+      "gold_answer": 114.0,
+      "predicted_answer": null,
+      "latency_sec": 11.499
+    },
+    {
+      "doc_id": "mro_2007_page_149_pdf_2",
+      "failure_category": "Multi-Step Arithmetic / Reasoning Error",
+      "question": "if current development costs increased in 2008 as much as in 2007 , what would the 2008 total be , in millions?",
+      "gold_program": "subtract(1654, 1251), add(#0, 1654)",
+      "gold_answer": 2057.0,
+      "predicted_answer": 3381.0,
+      "latency_sec": 8.714
+    },
+    {
+      "doc_id": "c_2010_page_223_pdf_3",
+      "failure_category": "Parse / Output Truncation Error",
+      "question": "in 2010 what was the percentage change of the carrying amount of loan receivable net of the allowance",
+      "gold_program": "subtract(920, 95), subtract(469, 77), subtract(#1, #0), divide(#2, #0)",
+      "gold_answer": -0.52485,
+      "predicted_answer": 3.0,
+      "latency_sec": 15.763
+    },
+    {
+      "doc_id": "abmd_2006_page_75_pdf_1",
+      "failure_category": "Parse / Output Truncation Error",
+      "question": "what is the decline from current future minimum lease payments and the following years expected obligation?\\\\n",
+      "gold_program": "subtract(1703, 1371), divide(#0, 1703)",
+      "gold_answer": 0.19495,
+      "predicted_answer": 5.0,
+      "latency_sec": 15.813
+    },
+    {
+      "doc_id": "amat_2013_page_18_pdf_2",
+      "failure_category": "Parse / Output Truncation Error",
+      "question": "what is the applied 2019s net sales in 2018 , ( in billions ) ?",
+      "gold_program": "divide(18, const_100), divide(1.3, #0)",
+      "gold_answer": 7.22222,
+      "predicted_answer": 2.0,
+      "latency_sec": 15.971
+    },
+    {
+      "doc_id": "dvn_2014_page_85_pdf_1",
+      "failure_category": "Multi-Step Arithmetic / Reasoning Error",
+      "question": "what is the average amortization amount , in millions , from 2015-2019?",
+      "gold_program": "multiply(45, const_4), add(#0, 44), divide(#1, const_5)",
+      "gold_answer": 44.8,
+      "predicted_answer": 44.0,
+      "latency_sec": 10.017
+    },
+    {
+      "doc_id": "spgi_2018_page_74_pdf_1",
+      "failure_category": "Parse / Output Truncation Error",
+      "question": "what was the ratio of the pension trust assets for 2017 to 2018",
+      "gold_program": "divide(480, 415)",
+      "gold_answer": 1.15663,
+      "predicted_answer": null,
+      "latency_sec": 15.693
+    },
+    {
+      "doc_id": "zbh_2003_page_58_pdf_3",
+      "failure_category": "Parse / Output Truncation Error",
+      "question": "what percent of inventory is ready for liquidation ( sale ) in 2003?",
+      "gold_program": "divide(384.3, 527.7)",
+      "gold_answer": 0.72825,
+      "predicted_answer": 0.914,
+      "latency_sec": 17.543
+    },
+    {
+      "doc_id": "amt_2005_page_105_pdf_2",
+      "failure_category": "Parse / Output Truncation Error",
+      "question": "what is the total value of net operating loss carryforwards?",
+      "gold_program": "add(2157503, 2418012)",
+      "gold_answer": 4575515.0,
+      "predicted_answer": null,
+      "latency_sec": 16.685
+    },
+    {
+      "doc_id": "etr_2015_page_131_pdf_1",
+      "failure_category": "Parse / Output Truncation Error",
+      "question": "what is the percent change in annual long-term debt maturities from 2016 to 2017?",
+      "gold_program": "subtract(766451, 204079), divide(#0, 204079)",
+      "gold_answer": 2.75566,
+      "predicted_answer": 100.0,
+      "latency_sec": 15.946
+    },
+    {
+      "doc_id": "holx_2015_page_98_pdf_2",
+      "failure_category": "Parse / Output Truncation Error",
+      "question": "what is the expected growth rate in amortization expense from 2016 to 2017?",
+      "gold_program": "subtract(365.6, 377.0), divide(#0, 377.0)",
+      "gold_answer": -0.03024,
+      "predicted_answer": 100.0,
+      "latency_sec": 15.311
+    },
+    {
+      "doc_id": "unp_2008_page_77_pdf_1",
+      "failure_category": "Parse / Output Truncation Error",
+      "question": "as of december 31 , 2008 what was the percent of the total accounts payable and other liabilities that was accrued wages and vacation",
+      "gold_program": "divide(367, 2560)",
+      "gold_answer": 0.14336,
+      "predicted_answer": 367.0,
+      "latency_sec": 15.399
+    },
+    {
+      "doc_id": "aes_2016_page_191_pdf_3",
+      "failure_category": "Single-Step Lookup / Hallucination Error",
+      "question": "for the period ending in 2016 , what was the average amount of settlements , in millions?",
+      "gold_program": "table_average(settlements, none)",
+      "gold_answer": -11.33333,
+      "predicted_answer": -13.0,
+      "latency_sec": 9.88
+    },
+    {
+      "doc_id": "etfc_2007_page_126_pdf_3",
+      "failure_category": "Parse / Output Truncation Error",
+      "question": "what percentage of total future principal payments of corporate debt are due after 2012?",
+      "gold_program": "divide(2996337, 3450152)",
+      "gold_answer": 0.86847,
+      "predicted_answer": null,
+      "latency_sec": 16.553
+    },
+    {
+      "doc_id": "mas_2012_page_70_pdf_1",
+      "failure_category": "Multi-Step Arithmetic / Reasoning Error",
+      "question": "what was the percentage change in total net goodwill between 2010 and 2011?",
+      "gold_program": "subtract(1891, 2383), divide(#0, 2383)",
+      "gold_answer": -0.20646,
+      "predicted_answer": 475.06,
+      "latency_sec": 10.256
+    },
+    {
+      "doc_id": "etfc_2014_page_26_pdf_2",
+      "failure_category": "Multi-Step Arithmetic / Reasoning Error",
+      "question": "what was the total return percentage for e*trade financial corporation for the five years ended 12/14?",
+      "gold_program": "subtract(137.81, const_100), divide(#0, const_100)",
+      "gold_answer": 0.3781,
+      "predicted_answer": 137.81,
+      "latency_sec": 6.325
+    },
+    {
+      "doc_id": "etr_2003_page_84_pdf_2",
+      "failure_category": "Unit / Magnitude Scaling Error",
+      "question": "what amount of long-term debt due in the next 36 months as of december 31 , 2003 , in millions?",
+      "gold_program": "add(503215, 462420), add(#0, 75896), divide(#1, const_1000)",
+      "gold_answer": 1041.531,
+      "predicted_answer": 10415.31,
+      "latency_sec": 9.707
+    },
+    {
+      "doc_id": "lmt_2012_page_47_pdf_3",
+      "failure_category": "Parse / Output Truncation Error",
+      "question": "what is the growth rate in operating profit for space systems in 2011?",
+      "gold_program": "subtract(1063, 1030), divide(#0, 1030)",
+      "gold_answer": 0.03204,
+      "predicted_answer": 100.0,
+      "latency_sec": 14.089
+    },
+    {
+      "doc_id": "etr_2002_page_86_pdf_3",
+      "failure_category": "Parse / Output Truncation Error",
+      "question": "what are the annual other sinking fund requirements as a percentage of annual long-term debt maturities ( excluding lease obligations ) and annual cash sinking fund requirements for debt outstanding in 2007?",
+      "gold_program": "multiply(30.2, const_1000), divide(#0, 475288)",
+      "gold_answer": 0.06354,
+      "predicted_answer": 2.0,
+      "latency_sec": 22.344
+    }
+  ]
+}
